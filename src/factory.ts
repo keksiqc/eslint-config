@@ -24,6 +24,7 @@ import {
   sortTsconfig,
   stylistic,
   svelte,
+  tailwind,
   test,
   toml,
   typescript,
@@ -92,6 +93,7 @@ export function keksiqc(
     regexp: enableRegexp = true,
     solid: enableSolid = false,
     svelte: enableSvelte = false,
+    tailwind: enableTailwind = false,
     typescript: enableTypeScript = isPackageExists('typescript'),
     unicorn: enableUnicorn = true,
     unocss: enableUnoCSS = false,
@@ -166,6 +168,10 @@ export function keksiqc(
 
   if (enableJsx) {
     configs.push(jsx())
+  }
+
+  if (enableTailwind) {
+    configs.push(tailwind())
   }
 
   if (enableTypeScript) {
