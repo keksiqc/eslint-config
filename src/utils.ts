@@ -129,7 +129,7 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
     message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
   })
   if (result)
-    await import('@keksiqc/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
+    await import('@antfu/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
 }
 
 export function isInEditorEnv(): boolean {
