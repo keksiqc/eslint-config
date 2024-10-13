@@ -344,6 +344,7 @@ import {
   sortPackageJson,
   sortTsconfig,
   stylistic,
+  tailwind,
   toml,
   typescript,
   unicorn,
@@ -364,6 +365,7 @@ export default combine(
   vue(),
   jsonc(),
   yaml(),
+  tailwind(),
   toml(),
   markdown(),
 )
@@ -666,6 +668,19 @@ import keksiqc from '@keksiqc/eslint-config'
 
 export default keksiqc({
   unocss: true,
+})
+```
+
+#### Tailwind
+
+To enable Tailwind support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import keksiqc from '@keksiqc/eslint-config'
+
+export default keksiqc({
+  tailwind: true,
 })
 ```
 
