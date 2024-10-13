@@ -2,7 +2,7 @@ import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from '.
 
 import globals from 'globals'
 
-import { pluginAntfu, pluginUnusedImports } from '../plugins'
+import { pluginkeksiqc, pluginUnusedImports } from '../plugins'
 
 export async function javascript(
   options: OptionsIsInEditor & OptionsOverrides = {},
@@ -36,25 +36,25 @@ export async function javascript(
       linterOptions: {
         reportUnusedDisableDirectives: true,
       },
-      name: 'antfu/javascript/setup',
+      name: 'keksiqc/javascript/setup',
     },
     {
-      name: 'antfu/javascript/rules',
+      name: 'keksiqc/javascript/rules',
       plugins: {
-        'antfu': pluginAntfu,
+        'keksiqc': pluginkeksiqc,
         'unused-imports': pluginUnusedImports,
       },
       rules: {
         'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }],
 
-        'antfu/no-top-level-await': 'error',
-
         'array-callback-return': 'error',
+
         'block-scoped-var': 'error',
         'constructor-super': 'error',
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
         'eqeqeq': ['error', 'smart'],
+        'keksiqc/no-top-level-await': 'error',
         'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
         'no-alert': 'error',
         'no-array-constructor': 'error',

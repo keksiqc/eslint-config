@@ -10,7 +10,7 @@ import type {
 
 import process from 'node:process'
 import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from '../globs'
-import { pluginAntfu } from '../plugins'
+import { pluginkeksiqc } from '../plugins'
 import { interopDefault, renameRules } from '../utils'
 
 export async function typescript(
@@ -93,16 +93,16 @@ export async function typescript(
           ...parserOptions as any,
         },
       },
-      name: `antfu/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
+      name: `keksiqc/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
     }
   }
 
   return [
     {
       // Install the plugins without globs, so they can be configured separately.
-      name: 'antfu/typescript/setup',
+      name: 'keksiqc/typescript/setup',
       plugins: {
-        antfu: pluginAntfu,
+        keksiqc: pluginkeksiqc,
         ts: pluginTs as any,
       },
     },
@@ -117,7 +117,7 @@ export async function typescript(
         ],
     {
       files,
-      name: 'antfu/typescript/rules',
+      name: 'keksiqc/typescript/rules',
       rules: {
         ...renameRules(
           pluginTs.configs['eslint-recommended'].overrides![0].rules!,
@@ -178,7 +178,7 @@ export async function typescript(
       ? [{
           files: filesTypeAware,
           ignores: ignoresTypeAware,
-          name: 'antfu/typescript/rules-type-aware',
+          name: 'keksiqc/typescript/rules-type-aware',
           rules: {
             ...typeAwareRules,
             ...overridesTypeAware,

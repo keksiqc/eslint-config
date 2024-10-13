@@ -1,9 +1,9 @@
 // @ts-expect-error missing types
 import styleMigrate from '@stylistic/eslint-plugin-migrate'
 
-import { antfu } from './src'
+import { keksiqc } from './src'
 
-export default antfu(
+export default keksiqc(
   {
     vue: true,
     react: true,

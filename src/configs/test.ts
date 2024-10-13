@@ -35,14 +35,14 @@ export async function test(
 
   return [
     {
-      name: 'antfu/test/setup',
+      name: 'keksiqc/test/setup',
       plugins: {
         test: _pluginTest,
       },
     },
     {
       files,
-      name: 'antfu/test/rules',
+      name: 'keksiqc/test/rules',
       rules: {
         'test/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
         'test/no-identical-title': 'error',
@@ -54,7 +54,7 @@ export async function test(
 
         // Disables
         ...{
-          'antfu/no-top-level-await': 'off',
+          'keksiqc/no-top-level-await': 'off',
           'no-unused-expressions': 'off',
           'node/prefer-global/process': 'off',
           'ts/explicit-function-return-type': 'off',

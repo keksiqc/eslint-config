@@ -1,6 +1,6 @@
 import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from '../types'
 
-import { pluginAntfu } from '../plugins'
+import { pluginkeksiqc } from '../plugins'
 import { interopDefault } from '../utils'
 
 export const StylisticConfigDefaults: StylisticConfig = {
@@ -42,25 +42,25 @@ export async function stylistic(
 
   return [
     {
-      name: 'antfu/stylistic/rules',
+      name: 'keksiqc/stylistic/rules',
       plugins: {
-        antfu: pluginAntfu,
+        keksiqc: pluginkeksiqc,
         style: pluginStylistic,
       },
       rules: {
         ...config.rules,
 
-        'antfu/consistent-chaining': 'error',
-        'antfu/consistent-list-newline': 'error',
+        'keksiqc/consistent-chaining': 'error',
+        'keksiqc/consistent-list-newline': 'error',
 
         ...(lessOpinionated
           ? {
               curly: ['error', 'all'],
             }
           : {
-              'antfu/curly': 'error',
-              'antfu/if-newline': 'error',
-              'antfu/top-level-function': 'error',
+              'keksiqc/curly': 'error',
+              'keksiqc/if-newline': 'error',
+              'keksiqc/top-level-function': 'error',
             }
         ),
 

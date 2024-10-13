@@ -1,6 +1,6 @@
-# @antfu/eslint-config
+# @keksiqc/eslint-config
 
-[![npm](https://img.shields.io/npm/v/@antfu/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config) [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+[![npm](https://img.shields.io/npm/v/@keksiqc/eslint-config?color=444&label=)](https://npmjs.com/package/@keksiqc/eslint-config) [![code style](https://keksiqc.me/badge-code-style.svg)](https://github.com/keksiqc/eslint-config)
 
 - Auto fix for formatting (aimed to be used standalone **without** Prettier)
 - Reasonable defaults, best practices, only one line of config
@@ -17,7 +17,7 @@
 - Requires ESLint v9.5.0+
 
 > [!NOTE]
-> Since v1.0.0, this config is rewritten to the new [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), check the [release note](https://github.com/antfu/eslint-config/releases/tag/v1.0.0) for more details.
+> Since v1.0.0, this config is rewritten to the new [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), check the [release note](https://github.com/keksiqc/eslint-config/releases/tag/v1.0.0) for more details.
 >
 > Since v3.0.0, ESLint v9.5.0+ is now required.
 
@@ -35,7 +35,7 @@
 We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
 
 ```bash
-pnpm dlx @antfu/eslint-config@latest
+pnpm dlx @keksiqc/eslint-config@latest
 ```
 
 ### Manual Install
@@ -43,16 +43,16 @@ pnpm dlx @antfu/eslint-config@latest
 If you prefer to set up manually:
 
 ```bash
-pnpm i -D eslint @antfu/eslint-config
+pnpm i -D eslint @keksiqc/eslint-config
 ```
 
 And create `eslint.config.mjs` in your project root:
 
 ```js
 // eslint.config.mjs
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu()
+export default keksiqc()
 ```
 
 <details>
@@ -63,13 +63,13 @@ Combined with legacy config:
 If you still use some configs from the legacy eslintrc format, you can use the [`@eslint/eslintrc`](https://www.npmjs.com/package/@eslint/eslintrc) package to convert them to the flat config.
 
 ```js
-// eslint.config.mjs
-import antfu from '@antfu/eslint-config'
 import { FlatCompat } from '@eslint/eslintrc'
+// eslint.config.mjs
+import keksiqc from '@keksiqc/eslint-config'
 
 const compat = new FlatCompat()
 
-export default antfu(
+export default keksiqc(
   {
     ignores: [],
   },
@@ -255,22 +255,22 @@ lspconfig.eslint.setup({
 
 Since v1.0, we migrated to [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new). It provides much better organization and composition.
 
-Normally you only need to import the `antfu` preset:
+Normally you only need to import the `keksiqc` preset:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu()
+export default keksiqc()
 ```
 
 And that's it! Or you can configure each integration individually, for example:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
 // Type of the project. 'lib' for libraries, the default is 'app'
   type: 'lib',
 
@@ -299,15 +299,15 @@ export default antfu({
 })
 ```
 
-The `antfu` factory function also accepts any number of arbitrary custom config overrides:
+The `keksiqc` factory function also accepts any number of arbitrary custom config overrides:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu(
+export default keksiqc(
   {
-    // Configures for antfu's config
+    // Configures for keksiqc's config
   },
 
   // From the second arguments they are ESLint Flat Configs
@@ -349,7 +349,7 @@ import {
   unicorn,
   vue,
   yaml,
-} from '@antfu/eslint-config'
+} from '@keksiqc/eslint-config'
 
 export default combine(
   ignores(),
@@ -371,7 +371,7 @@ export default combine(
 
 </details>
 
-Check out the [configs](https://github.com/antfu/eslint-config/blob/main/src/configs) and [factory](https://github.com/antfu/eslint-config/blob/main/src/factory.ts) for more details.
+Check out the [configs](https://github.com/keksiqc/eslint-config/blob/main/src/configs) and [factory](https://github.com/keksiqc/eslint-config/blob/main/src/factory.ts) for more details.
 
 > Thanks to [sxzz/eslint-config](https://github.com/sxzz/eslint-config) for the inspiration and reference.
 
@@ -414,9 +414,9 @@ Since v2.9.0, this preset will automatically rename the plugins also for your cu
 If you really want to use the original prefix, you can revert the plugin renaming by:
 
 ```ts
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu()
+export default keksiqc()
   .renamePlugins({
     ts: '@typescript-eslint',
     yaml: 'yml',
@@ -433,9 +433,9 @@ Certain rules would only be enabled in specific files, for example, `ts/*` rules
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu(
+export default keksiqc(
   {
     vue: true,
     typescript: true
@@ -460,9 +460,9 @@ We also provided the `overrides` options in each integration to make it easier:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   vue: {
     overrides: {
       'vue/operator-linebreak': ['error', 'before'],
@@ -483,19 +483,19 @@ export default antfu({
 
 ### Config Composer
 
-Since v2.10.0, the factory function `antfu()` returns a [`FlatConfigComposer` object from `eslint-flat-config-utils`](https://github.com/antfu/eslint-flat-config-utils#composer) where you can chain the methods to compose the config even more flexibly.
+Since v2.10.0, the factory function `keksiqc()` returns a [`FlatConfigComposer` object from `eslint-flat-config-utils`](https://github.com/keksiqc/eslint-flat-config-utils#composer) where you can chain the methods to compose the config even more flexibly.
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu()
+export default keksiqc()
   .prepend(
     // some configs before the main config
   )
   // overrides any named configs
   .override(
-    'antfu/imports',
+    'keksiqc/imports',
     {
       rules: {
         'import/order': ['error', { 'newlines-between': 'always' }],
@@ -516,9 +516,9 @@ Vue support is detected automatically by checking if `vue` is installed in your 
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   vue: true
 })
 ```
@@ -529,9 +529,9 @@ We have limited support for Vue 2 (as it's already [reached EOL](https://v2.vuej
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   vue: {
     vueVersion: 2
   },
@@ -546,13 +546,13 @@ We provide some optional configs for specific use cases, that we don't include t
 
 #### Formatters
 
-Use external formatters to format files that ESLint cannot handle yet (`.css`, `.html`, etc). Powered by [`eslint-plugin-format`](https://github.com/antfu/eslint-plugin-format).
+Use external formatters to format files that ESLint cannot handle yet (`.css`, `.html`, etc). Powered by [`eslint-plugin-format`](https://github.com/keksiqc/eslint-plugin-format).
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   formatters: {
     /**
      * Format CSS, LESS, SCSS files, also the `<style>` blocks in Vue
@@ -586,9 +586,9 @@ To enable React support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   react: true,
 })
 ```
@@ -605,9 +605,9 @@ To enable svelte support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   svelte: true,
 })
 ```
@@ -624,9 +624,9 @@ To enable astro support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   astro: true,
 })
 ```
@@ -643,9 +643,9 @@ To enable Solid support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   solid: true,
 })
 ```
@@ -662,9 +662,9 @@ To enable UnoCSS support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   unocss: true,
 })
 ```
@@ -681,7 +681,7 @@ This config also provides some optional plugins/rules for extended usage.
 
 #### `command`
 
-Powered by [`eslint-plugin-command`](https://github.com/antfu/eslint-plugin-command). It is not a typical rule for linting, but an on-demand micro-codemod tool that triggers by specific comments.
+Powered by [`eslint-plugin-command`](https://github.com/keksiqc/eslint-plugin-command). It is not a typical rule for linting, but an on-demand micro-codemod tool that triggers by specific comments.
 
 For a few triggers, for example:
 
@@ -690,7 +690,7 @@ For a few triggers, for example:
 - `/// to-for-each` - converts a for-in/for-of loop to `.forEach()`
 - `/// to-for-of` - converts a `.forEach()` to a for-of loop
 - `/// keep-sorted` - sorts an object/array/interface
-- ... etc. - refer to the [documentation](https://github.com/antfu/eslint-plugin-command#built-in-commands)
+- ... etc. - refer to the [documentation](https://github.com/keksiqc/eslint-plugin-command#built-in-commands)
 
 You can add the trigger comment one line above the code you want to transform, for example (note the triple slash):
 
@@ -719,9 +719,9 @@ You can optionally enable the [type aware rules](https://typescript-eslint.io/li
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   typescript: {
     tsconfigPath: 'tsconfig.json',
   },
@@ -736,9 +736,9 @@ This is to prevent unused imports from getting removed by the IDE during refacto
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   isInEditor: false
 })
 ```
@@ -799,16 +799,16 @@ This project follows [Semantic Versioning](https://semver.org/) for releases. Ho
 If you enjoy this code style, and would like to mention it in your project, here is the badge you can use:
 
 ```md
-[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+[![code style](https://keksiqc.me/badge-code-style.svg)](https://github.com/keksiqc/eslint-config)
 ```
 
-[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+[![code style](https://keksiqc.me/badge-code-style.svg)](https://github.com/keksiqc/eslint-config)
 
 ## FAQ
 
 ### Prettier?
 
-[Why I don't use Prettier](https://antfu.me/posts/why-not-prettier)
+[Why I don't use Prettier](https://keksiqc.me/posts/why-not-prettier)
 
 Well, you can still use Prettier to format files that are not supported well by ESLint yet, such as `.css`, `.html`, etc. See [formatters](#formatters) for more details.
 
@@ -829,9 +829,9 @@ I am a very opinionated person, so as this config. I prefer the top-level functi
 I know they are not necessarily the popular opinions. If you really want to get rid of them, you can disable them with:
 
 ```ts
-import antfu from '@antfu/eslint-config'
+import keksiqc from '@keksiqc/eslint-config'
 
-export default antfu({
+export default keksiqc({
   lessOpinionated: true
 })
 ```
@@ -842,11 +842,11 @@ Sure, you can configure and override rules locally in your project to fit your n
 
 ## Check Also
 
-- [antfu/dotfiles](https://github.com/antfu/dotfiles) - My dotfiles
-- [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - My VS Code settings
-- [antfu/starter-ts](https://github.com/antfu/starter-ts) - My starter template for TypeScript library
-- [antfu/vitesse](https://github.com/antfu/vitesse) - My starter template for Vue & Vite app
+- [keksiqc/dotfiles](https://github.com/keksiqc/dotfiles) - My dotfiles
+- [keksiqc/vscode-settings](https://github.com/keksiqc/vscode-settings) - My VS Code settings
+- [keksiqc/starter-ts](https://github.com/keksiqc/starter-ts) - My starter template for TypeScript library
+- [keksiqc/vitesse](https://github.com/keksiqc/vitesse) - My starter template for Vue & Vite app
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2019-PRESENT [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License &copy; 2019-PRESENT [Anthony Fu](https://github.com/keksiqc)

@@ -62,7 +62,7 @@ export async function vue(
           watchEffect: 'readonly',
         },
       },
-      name: 'antfu/vue/setup',
+      name: 'keksiqc/vue/setup',
       plugins: {
         vue: pluginVue,
       },
@@ -82,7 +82,7 @@ export async function vue(
           sourceType: 'module',
         },
       },
-      name: 'antfu/vue/rules',
+      name: 'keksiqc/vue/rules',
       processor: sfcBlocks === false
         ? pluginVue.processors['.vue']
         : mergeProcessors([
@@ -110,7 +110,7 @@ export async function vue(
               ...pluginVue.configs['vue3-recommended'].rules as any,
             },
 
-        'antfu/no-top-level-await': 'off',
+        'keksiqc/no-top-level-await': 'off',
         'node/prefer-global/process': 'off',
         'ts/explicit-function-return-type': 'off',
 

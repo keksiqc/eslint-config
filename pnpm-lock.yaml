@@ -120,9 +120,6 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
     devDependencies:
-      '@antfu/eslint-config':
-        specifier: workspace:*
-        version: 'link:'
       '@antfu/ni':
         specifier: ^0.23.0
         version: 0.23.0
@@ -132,6 +129,9 @@ importers:
       '@eslint/config-inspector':
         specifier: ^0.5.4
         version: 0.5.4(eslint@9.11.1(jiti@2.0.0))
+      '@keksiqc/eslint-config':
+        specifier: workspace:*
+        version: 'link:'
       '@prettier/plugin-xml':
         specifier: ^3.4.1
         version: 3.4.1(prettier@3.3.2)

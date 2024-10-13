@@ -24,7 +24,7 @@ export async function astro(
 
   return [
     {
-      name: 'antfu/astro/setup',
+      name: 'keksiqc/astro/setup',
       plugins: {
         astro: pluginAstro,
       },
@@ -40,7 +40,7 @@ export async function astro(
         },
         sourceType: 'module',
       },
-      name: 'antfu/astro/rules',
+      name: 'keksiqc/astro/rules',
       processor: 'astro/client-side-ts',
       rules: {
         // use recommended rules
