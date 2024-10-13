@@ -391,6 +391,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
   unocss?: boolean | OptionsUnoCSS
 
   /**
+   * c
    * Use external formatters to format files.
    *
    * Requires installing:
@@ -433,4 +434,14 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
     react?: TypedFlatConfigItem['rules']
     svelte?: TypedFlatConfigItem['rules']
   }
+
+  /**
+   * Enable Tailwind CSS support.
+   *
+   * Requires installing:
+   * - `eslint-plugin-tailwindcss`
+   *
+   * @default false
+   */
+  tailwind?: boolean
 }

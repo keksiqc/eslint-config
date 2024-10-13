@@ -85,6 +85,9 @@
     "eslint-plugin-svelte": {
       "optional": true
     },
+    "eslint-plugin-tailwindcss": {
+      "optional": true
+    },
     "prettier-plugin-astro": {
       "optional": true
     },
