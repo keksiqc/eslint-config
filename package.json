@@ -1,7 +1,7 @@
 {
   "name": "@keksiqc/eslint-config",
   "type": "module",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "packageManager": "pnpm@9.12.3",
   "description": "Keksi's ESLint config",
   "author": "Keksi <contact@keksi.me> (https://github.com/keksiqc)",
