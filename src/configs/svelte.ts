@@ -3,6 +3,9 @@ import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStyli
 import { GLOB_SVELTE } from '../globs'
 import { ensurePackages, interopDefault } from '../utils'
 
+// Add type for valid quote values
+type QuoteType = 'single' | 'double'
+
 export async function svelte(
   options: OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsFiles = {},
 ): Promise<TypedFlatConfigItem[]> {
@@ -14,7 +17,7 @@ export async function svelte(
 
   const {
     indent = 2,
-    quotes = 'single',
+    quotes = 'single' as QuoteType, // Add type assertion
   } = typeof stylistic === 'boolean' ? {} : stylistic
 
   await ensurePackages([
@@ -93,11 +96,11 @@ export async function svelte(
 
         ...stylistic
           ? {
-              'style/indent': 'off', // superseded by svelte/indent
-              'style/no-trailing-spaces': 'off', // superseded by svelte/no-trailing-spaces
+              'style/indent': 'off',
+              'style/no-trailing-spaces': 'off',
               'svelte/derived-has-same-inputs-outputs': 'error',
               'svelte/html-closing-bracket-spacing': 'error',
-              'svelte/html-quotes': ['error', { prefer: quotes }],
+              'svelte/html-quotes': ['error', { prefer: quotes as QuoteType }],
               'svelte/indent': ['error', { alignAttributesVertically: true, indent }],
               'svelte/mustache-spacing': 'error',
               'svelte/no-spaces-around-equal-signs-in-attribute': 'error',
